@@ -1,22 +1,26 @@
 {
-    "name": "nielen-web",
-    "description": "A website for the company where I am currently doing my apprenticeship.",
-    "version": "0.0.1",
-    "main": "server.js",
-    "scripts": {
-        "start": "nodemon"
-    },
-    "keywords": [],
-    "author": {
-        "name": "Matthias Stratmann",
-        "email": "stratmann94@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/matthias-strat/nielen-web"
-    },
-    "dependencies": {
-        "express": "^4.16.4",
-        "morgan": "^1.9.1"
-    }
+  "name": "nielen-web",
+  "description": "A website for the company where I am currently doing my apprenticeship.",
+  "version": "0.0.1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Matthias Stratmann",
+    "email": "stratmann94@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthias-strat/nielen-web"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11"
+  }
 }
