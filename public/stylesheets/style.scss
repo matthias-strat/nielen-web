@@ -2,7 +2,44 @@
 
 $font-stack: 'Lato', arial, sans-serif;
 $lu-yellow: #ebb42a;
+$lu-dark: #211C16;
+$lu-darklight: #333;
+$lu-fontlight: #948D81;
 
 body {
   font-family: $font-stack;
+  color: $lu-darklight;
+  background-image: url("../images/bg_noise_light.png")
+}
+
+::selection {
+  background-color: $lu-darklight;
+  color: #eee;
+}
+::-moz-selection {
+  background-color: $lu-darklight;
+  color: #eee;
+}
+
+
+.carousel-progress-bar {
+  height: 3px;
+  background-color: $lu-yellow;
+  border: none;
+  margin: 0;
+  z-index: 11;
+  width: 0%;
+  position: relative;
+}
+
+.text-yellow {
+  color: $lu-yellow;
+}
+.row-yellow {
+  background-image: url("../images/bg_noise_yellow.png");
+  color: $lu-dark;
+}
+.row-dark {
+  background-image: url("../images/bg_noise_dark.png");
+  color: $lu-fontlight;
 }

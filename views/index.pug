@@ -1,19 +1,77 @@
 extends layout
 
 block content
-  nav(class='navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom')
-    .container
-      a(class='navbar-brand mr-auto' href='#') Navbar
-      button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-        span(class='navbar-toggler-icon')
-      div(class='collapse navbar-collapse' id='navbarSupportedContent')
-        ul(class='navbar-nav')
-          li(class='nav-item active')
-            a(class='nav-link' href='#') Home
-              span(class='sr-only') (current)
-          li(class='nav-item')
-            a(class='nav-link' href='#') Über uns
-          li(class='nav-item')
-            a(class='nav-link' href='#') Leistungen
-          li(class='nav-item')
-            a(class='nav-link' href='#') Kontakt
+  div(id='myCarousel' class='carousel slide carousel-fade')
+    div(class='carousel-inner')
+      div(class='carousel-item active')
+        img(class='d-block w-100' src='images/temp/banner_1.jpg' alt='First slide')
+      div(class='carousel-item')
+        img(class='d-block w-100' src='images/temp/banner_2.jpg' alt='Second slide')
+      div(class='carousel-item')
+        img(class='d-block w-100' src='images/temp/banner_3.jpg' alt='Third slide')
+    a(class='carousel-control-prev' href='#myCarousel' role='button' data-slide='prev')
+      span(class='carousel-control-prev-icon' aria-hidden='true')
+      span(class='sr-only') Previous
+    a(class='carousel-control-next' href='#myCarousel' role='button' data-slide='next')
+      span(class='carousel-control-next-icon' aria-hidden='true')
+      span(class='sr-only') Next
+    hr(class='carousel-progress-bar')
+  .container-fluid
+    div(class="row")
+      .container
+        div(class='row my-4')
+          div(class='col text-center')
+            h1(class='display-5 text-uppercase text-yellow') Wir ackern für Sie!
+            p(class='lead') ... und das bereits seit über 85 Jahren!
+            hr(clasS='my-4')
+            p(class='text-muted') 
+              | Sie brauchen unterstützung in der Landwritschaft, bei Transport oder Erdarbeiten?
+              | Mit einem zuverlässigen Team, jahrerlanger Erfahrung und einem modernen Maschinenpark setzen wir vom Lohnunternehmen Nielen Ihre Arbeiten in die Tat um.
+              | Auf uns können Sie zählen.
+        div(class='row')
+          div(class='col-md-4')
+            h5 Landwirtschaft
+            p(class="text-muted") Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed ducimus porro dolores consequuntur nulla possimus quasi, fugiat saepe adipisci quos voluptatibus cupiditate esse libero deserunt?
+          div(class='col-md-4')
+            h5 Erdarbeiten
+            p(class="text-muted") Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita illo nobis delectus eos dignissimos voluptates unde ea inventore quis architecto.
+          div(class='col-md-4')
+            h5 Transporte
+            p(class="text-muted") Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nulla modi quod voluptatum rem consequuntur voluptate aspernatur maxime. Quam error consequatur totam assumenda doloremque obcaecati sunt eum animi ab explicabo?
+    div(class='row row-yellow')
+      .container
+        div(class='row my-4')
+          div(class='col')
+            h3 Das Unternehmen
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, autem, voluptatibus! Fugiat laboriosam ut blanditiis enim eaque illo facilis quae, laudantium saepe modi et maiores natus consequuntur, accusantium inventore doloremque in quod beatae neque ex dolore alias, eum deserunt omnis. Excepturi, impedit atque sequi. Consequuntur, magnam tempore, voluptas doloribus, debitis dignissimos obcaecati, temporibus quibusdam impedit cumque quaerat perspiciatis facere alias architecto. Ex quibusdam hic nobis cum obcaecati consequuntur, natus magni enim! Quidem nemo eos eius consequuntur et laboriosam aut commodi quam illo, magnam placeat molestias distinctio quos? Illo perspiciatis ratione ex fuga autem fugit minima. Perferendis, sequi dolore voluptate delectus quisquam quidem voluptatum autem voluptatibus unde laboriosam consequatur ut dolores magni adipisci, doloremque iusto asperiores earum sunt harum temporibus nihil, aspernatur et? Quo fugiat, assumenda sapiente vitae reiciendis, voluptate deleniti quia quasi optio consequuntur incidunt quas ex nesciunt esse debitis! Facilis qui quae ullam! Incidunt dolor sit dolores dignissimos, reprehenderit.
+            p Sie sollen mehr über uns und unser Unternehmen erfahren?
+            button(type='button' class='btn btn-outline-dark') Mehr erfahren
+    div(class="row")
+      .container
+        div(class='row my-4')
+          div(class='col')
+            h3(class='text-yellow') Leistungen
+            p Erhalten sie einen kleinen Einblick in unser vielfältiges Leistungspektrum.
+    div(class='row row-dark')
+      .container
+        div(class='row mt-5 mb-4')
+          div(class='col-md-4')
+            h5(class='text-uppercase text-yellow') Kontakt
+            address
+              ul(class='list-unstyled')
+                li
+                  abbr(title='Adresse')
+                    em(class='fa fa-home')
+                  |  Keekener Straße 100, 47533 Kleve-Rindern
+                li 
+                  abbr(title='Telefon')
+                    em(class='fa fa-phone')
+                  |  +49 (0) 2821 / 3501
+                li
+                  abbr(title='Telefax')
+                    em(class='fa fa-fax')
+                  |  +49 (0) 2821 / 30874
+                li
+                  abbr(title='Email')
+                    em(class='fa fa-envelope')
+                  |  stratmann94@gmail.com
