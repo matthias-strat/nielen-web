@@ -6,29 +6,29 @@ html
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
     title= title
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
-    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     nav(class='navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom')
       .container
-        a(class='navbar-brand mr-auto' href='#')
+        a(class='navbar-brand mr-auto' href='home')
           img(src='images/temp/wip2.png' class='d-inline-block')
           |  Lohnunternehmen Nielen
         button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
         div(class='collapse navbar-collapse' id='navbarSupportedContent')
           ul(class='navbar-nav ml-auto')
-            li(class='nav-item active')
-              a(class='nav-link' href='#') Home
+            li(class=path=='/'?'nav-item active':'nav-item')
+              a(class='nav-link' href='home') Home
                 span(class='sr-only') (current)
-            li(class='nav-item')
-              a(class='nav-link' href='#') Aktuelles
-            li(class='nav-item')
-              a(class='nav-link' href='#') Über uns
-            li(class='nav-item')
-              a(class='nav-link' href='#') Leistungen
-            li(class='nav-item')
-              a(class='nav-link' href='#') Kontakt
+            li(class=path=='/news'?'nav-item active':'nav-item')
+              a(class='nav-link' href='news') Aktuelles
+            li(class=path=='/services'?'nav-item active':'nav-item')
+              a(class='nav-link' href='services') Leistungen
+            li(class=path=='/about'?'nav-item active':'nav-item')
+              a(class='nav-link' href='about') Über uns
+            li(class=path=='/contact'?'nav-item active':'nav-item')
+              a(class='nav-link' href='contact') Kontakt
     block content
     script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')

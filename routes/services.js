@@ -5,9 +5,9 @@ const express   = require('express'),
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { 
+  res.render("services", { 
     title: "Lohnunternehmen Nielen",
-    path: "/"
+    path: "/services"
    });
 });
 

@@ -5,6 +5,7 @@ $lu-yellow: #ebb42a;
 $lu-dark: #211C16;
 $lu-darklight: #333;
 $lu-fontlight: #948D81;
+$lu-fontmuted: #7D776C;
 
 body {
   font-family: $font-stack;
@@ -43,3 +44,68 @@ body {
   background-image: url("../images/bg_noise_dark.png");
   color: $lu-fontlight;
 }
+
+.row-dark a {
+  color: $lu-fontlight;
+}
+
+.custom-card,
+.custom-card:hover {
+  color: inherit;
+  text-decoration: none;
+  background-color: #fff2d0;
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+.custom-card:hover {
+  background-color: #ffe8ae;
+}
+
+/* Bootstrap overrides */
+.text-muted {
+  color: $lu-fontmuted !important;
+}
+
+.navbar-nav > li {
+  float: left;
+  position: relative;
+}
+
+.navbar-light .navbar-nav .active a::after {
+  border-bottom: 3px solid $lu-yellow;
+  bottom: 0;
+  content: ' ';
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+
+// // Bootstrap 4 breakpoints & gutter
+// $grid-breakpoints: (
+//     xs: 0,
+//     sm: 576px,
+//     md: 768px,
+//     lg: 992px,
+//     xl: 1200px
+// ) !default;
+
+// $grid-gutter-width: 30px !default;
+
+// // number of cards per line for each breakpoint
+// $cards-per-line: (
+//     xs: 1,
+//     sm: 1,
+//     md: 3,
+//     lg: 3,
+//     xl: 3
+// );
+
+// @each $name, $breakpoint in $grid-breakpoints {
+//     @media (min-width: $breakpoint) {
+//         .card-deck .card {
+//             flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+//         }
+//     }
+// }

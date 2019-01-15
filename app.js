@@ -5,10 +5,13 @@ const createError   = require("http-errors"),
       express       = require("express"),
       path          = require("path"),
       cookieParser  = require("cookie-parser"),
-      morgan        = require("morgan");
+      morgan        = require("morgan"),
+      mongoose      = require("mongoose");
 
-// include routers
-const indexRouter   = require("./routes/index");
+// include user modules
+const config        = require("./app.config"),
+      router        = require("./app.router");
+
 // initialize express
 const app           = express();
 
@@ -22,23 +25,27 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/home', indexRouter);
+// use router
+router(app);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// connect to mongoose
+const mongooseOptions = {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+};
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+mongoose.Promise = global.Promise;
+mongoose.connect(config.database, mongooseOptions).then(
+  () => {
+    console.log("connection to MongoDB established");
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
+    // Start express and listen on either process.env.PORT (if set) or on
+    // default port 3030
+    let server = app.listen(config.port, () => {
+      const port = server.address().port;
+      console.log("The server is now listening on port", port);
+    })
+  },
+  err => { console.log("could not connect to MongoDB " + err); }
+);
