@@ -16,86 +16,15 @@ block content
         h5 Landwirtschaft
         hr
     div(class='row')
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          a(href='/services/gras')
-            div(class='image-zoom')
-              img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-            div(class='card-body')
-              h5(class='card-title') Grünland Silage
-              p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/guelle.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Gülletechnik
-            p(class='card-text text-muted') Fachgerechte und effiziente Ausbringung, für uns kein Problem!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/getreide.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Getreideernte
-            p(class='card-text text-muted') Dank hoher Schlagkraft bringen wir Ihre Ernte schnell und trocken ein.
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/pressen.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Stroh/Heu pressen
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          a(href='/services/silage-pressen')
-            div(class='image-zoom')
-              img(class='card-img-top' src='images/temp/silage_pressen.jpg' clt='')
-            div(class='card-body')
-              h5(class='card-title') Silage pressen
-              p(class='card-text text-muted') Egal ob rund oder eckig. Wir machen das!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Bodenbearbeitung
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Aussaat
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Mist/Kalk streuen
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Pflanzenschutz
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Stroh häckseln
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-      div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-        div(class='card flex-fill text-center shadow-hover mb-4')
-          div(class='image-zoom')
-            img(class='card-img-top' src='images/temp/gras.jpg' clt='')
-          div(class='card-body')
-            h5(class='card-title') Transporte
-            p(class='card-text text-muted') Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, numquam!
-
+      each service in serviceList
+        div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
+          div(class='card flex-fill text-center shadow-hover mb-4')
+            a(href=service.url)
+              div(class='image-zoom')
+                img(class='card-img-top' src=service.thumbnail_url clt='')
+              div(class='card-body')
+                h5(class='card-title') #{service.displayName}
+                p(class='card-text text-muted') #{service.description}
 
     div(class='row mt-3 mb-2')
       div(class='col')

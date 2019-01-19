@@ -49,3 +49,6 @@ mongoose.connect(config.database, mongooseOptions).then(
   },
   err => { console.log("could not connect to MongoDB " + err); }
 );
+
+let db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));

@@ -1,26 +1,42 @@
 "use strict";
 
 // Import required modules
-import express from "express";
-import createError from "http-errors";
+const express       = require("express"),
+      createError   = require("http-errors");
 
 // include routers
-import indexRouter from "./routes/index";
-import newsRouter from "./routes/news";
-import serviceRouter from "./routes/services";
-import aboutRouter from "./routes/about";
-import contactRouter from "./routes/contact";
-import jobRouter from "./routes/jobs";
+const indexRouter   = require("./routes/index"),
+      newsRouter    = require("./routes/news"),
+      aboutRouter   = require("./routes/about"),
+      contactRouter = require("./routes/contact"),
+      jobRouter     = require("./routes/jobs");
 
-export default function(app) {
+// include controllers
+const ServiceCtrl   = require("./controllers/service.controller"),
+      AdminCtrl     = require("./controllers/admin.controller");
   
+module.exports = function(app) {
+  
+  // Initialize router groups
+  const serviceRouter = express.Router(),
+        adminRouter   = express.Router();
+
+
   app.use("/",          indexRouter);
   app.use("/home",      indexRouter);
   app.use("/news",      newsRouter);
-  app.use("/services",  serviceRouter);
   app.use("/about",     aboutRouter);
   app.use("/contact",   contactRouter);
   app.use("/jobs",      jobRouter)
+
+  // Service router
+  app.use("/services", serviceRouter);
+  serviceRouter.get("/", ServiceCtrl.index);
+  serviceRouter.get("/:serviceName", ServiceCtrl.show);
+
+  // Admin router (TODO protect)
+  app.use("/admin", adminRouter);
+  adminRouter.get("/", AdminCtrl.auth);
 
   // catch 404 and forward to error handler
   app.use((req, res, next) => {
