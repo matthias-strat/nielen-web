@@ -4,7 +4,8 @@ $(function() {
       tick,
       isPause,
       bar = $('.carousel-progress-bar'),
-      crsl = $('#myCarousel');
+      crsl = $('#myCarousel'),
+      running = false;
 
   function carouselProgressBar() {
     bar.css({width: percent+'%'});
@@ -16,7 +17,10 @@ $(function() {
   }
 
   function carouselProgressBarStart() {
-    tick = setInterval(carouselProgressBar, 10);
+    if (!running) {
+      running = true;
+      tick = setInterval(carouselProgressBar, 10);
+    }
   }
 
   crsl.carousel({
@@ -26,6 +30,7 @@ $(function() {
 
   crsl.hover(function() {
     clearInterval(tick);
+    running = false;
   }, function() {
     carouselProgressBarStart();
   });
