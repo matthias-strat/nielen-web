@@ -21,13 +21,12 @@ exports.index = function(req, res, next) {
 
 exports.show = function(req, res, next) {
   const serviceName = req.params.serviceName;
-  console.log(serviceName);
   Service.findOne({ name: serviceName })
     .exec((err, service) => {
       if (err) { return next(err); }
       if (!service) { return next(createError(404)); }
 
-      res.render(service.url, {
+      res.render(service.view, {
         title: pageTitle,
         path: pagePath,
         service: service

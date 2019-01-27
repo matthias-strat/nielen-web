@@ -5,11 +5,12 @@ const createError   = require("http-errors"),
       express       = require("express"),
       path          = require("path"),
       cookieParser  = require("cookie-parser"),
+      bodyParser    = require("body-parser"),
       morgan        = require("morgan"),
       mongoose      = require("mongoose");
 
 // include user modules
-const config        = require("./app.config"),
+const config        = require("./config/app.config"),
       router        = require("./app.router");
 
 // initialize express
@@ -20,10 +21,18 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 app.use(morgan("dev"));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "public")));
+
+/* For development only */
+app.use("/javascripts", express.static(path.join(__dirname, "node_modules", "bootstrap", "dist", "js")));
+app.use("/javascripts", express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
+app.use("/javascripts", express.static(path.join(__dirname, "node_modules", "popper.js", "dist")));
+
+app.use("/stylesheets", express.static(path.join(__dirname, "node_modules", "bootstrap", "dist", "css")));
+app.use("/css", express.static(path.join(__dirname, "node_modules", "bootstrap", "dist", "css")));
+app.use("/scss", express.static(path.join(__dirname, "node_modules", "bootstrap", "scss")));
 
 // use router
 router(app);

@@ -18,7 +18,7 @@ block content
     div(class='row')
       each service in serviceList
         div(class='col-lg-4 col-md-6 col-xs-6 d-flex')
-          div(class='card flex-fill text-center shadow-hover mb-4')
+          div(class='card service-card flex-fill text-center shadow-hover mb-4')
             a(href=service.url)
               div(class='image-zoom')
                 img(class='card-img-top' src=service.thumbnail_url clt='')

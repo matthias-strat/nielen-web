@@ -1,1 +1,33 @@
 extends layout
+
+block header
+
+block content
+  div(class='row mt-4 mb-3')
+    div(class='col text-center')
+      h2(class='text-yellow') Aktuelles
+      p(class='text-muted') 
+        | Bleiben Sie stets über Neuigkeiten informiert.
+  div(class='row')
+    div(class='container')
+      div(class='row')
+        div(class='col-md-8')
+          div(class='row')
+            div(class='col-12 mb-3')
+              div(class='card shadow-hover')
+                img(class='card-img-top img-fluid' src='/images/news/01212019.jpg')
+                div(class='card-body')
+                  h5(class='card-title') Neuer Gülleauflieger
+                  p(class='card-text text-muted') Zum Beginn der Gülleausbringung wurde die Logistikkette um einen dritten Auflieger erweitert. Ab sofort steht Ihnen der Gülleauflieger der Firma 
+                    a(href='https://www.kth-trailer.de/') KTH-Trailer GmbH
+                    |  zur Verfügung.
+                  footer(class='blockquote-footer')
+                    small von Matthias Stratmann in 
+                      cite(title='Allgemeines') Allgemeines
+            div(class='col-12 mb-3')
+              div(class='card card-body') Nested 2
+            div(class='col-12 mb-3')
+              div(class='card card-body') Nested 3
+        div(class='col-md-4')
+          h5 Kategorie
+          hr

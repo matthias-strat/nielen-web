@@ -1,0 +1,20 @@
+// /* Bootstrap 4 Style overrides */
+
+/* Custom variables */ 
+$font-stack: 'Lato', arial, sans-serif;
+$lu-yellow: #ebb42a;
+$lu-dark: #211C16;
+$lu-darklight: #333;
+$lu-fontlight: #948D81;
+$lu-fontmuted: #6f6a60;
+
+/* Override default breadcrumb variables */ 
+$breadcrumb-bg: transparent;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-margin-bottom: .5rem;
+$breadcrumb-divider-color: $lu-fontlight;
+$breadcrumb-active-color: $lu-yellow;
+
+/* Link styles */
+$link-color: $lu-fontlight;

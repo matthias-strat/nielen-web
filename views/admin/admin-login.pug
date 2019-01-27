@@ -1,0 +1,24 @@
+extends admin-auth-layout
+
+block content
+  .container
+    div(class='card card-login mx-auto mt-5')
+      div(class='card-body')
+        h5(class='card-title') Anmelden
+        hr
+        if errorMessage.length > 0
+          div(class="alert alert-danger alert-dismissible fade show" role="alert")
+            button(type='button' class='close' data-dismiss='alert' aria-label='Close')
+              span(aria-hidden='true') &times;
+            | #{errorMessage}
+        p(class='card-text') Um Zugang zum Admin-Bereich der Webseite zu erhalten ist ein Adminstrator-Konto notwendig. Bitte melden Sie sich an.
+        form(action='/admin/login' method='post' enctype='application/x-www-form-urlencoded') 
+          div(class='form-group')
+            div(class='form-label-group')
+              input(type='text' name="username" id='inputUsername' class='form-control' placeholder='Benutzername' required='required' autofocus='autofocus')
+              label(for='inputUsername') Benutzername
+          div(class='form-group')
+            div(class='form-label-group')
+              input(type='password' name="password" id='inputPassword' class='form-control' placeholder='Passwort' required='required')
+              label(for='inputPassword') Passwort
+          button(type='submit' class='btn btn-primary btn-block') Anmelden

@@ -1,6 +1,6 @@
 nav(class='navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom')
   .container
-    a(class='navbar-brand mr-auto' href='home')
+    a(class='navbar-brand mr-auto' href='/home')
       img(src='/images/banner_nielen.png' class='d-inline-block')
     button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
       span(class='navbar-toggler-icon')
@@ -9,10 +9,10 @@ nav(class='navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom
         li(class=path=='/'?'nav-item active':'nav-item')
           a(class='nav-link' href='/home') Home
             span(class='sr-only') (current)
-        li(class=path=='/news'?'nav-item active':'nav-item')
-          a(class='nav-link' href='/news') Aktuelles
         li(class=path=='/services'?'nav-item active':'nav-item')
           a(class='nav-link' href='/services') Leistungen
+        li(class=path=='/news'?'nav-item active':'nav-item')
+          a(class='nav-link' href='/news') Aktuelles
         li(class=path=='/about'?'nav-item active':'nav-item')
           a(class='nav-link' href='/about') Über uns
         li(class=path=='/jobs'?'nav-item active':'nav-item')
