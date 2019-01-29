@@ -8,6 +8,9 @@ html
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css')
     link(rel='stylesheet', href='/stylesheets/app.min.css')
+    if stylesheets
+      each style in stylesheets
+        link(rel='stylesheet' href=style)
   body
     include components/navbar
     block header

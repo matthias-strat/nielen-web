@@ -89,6 +89,11 @@ body {
     height: 300px;
   }
 }
+@include media-breakpoint-down(sm) {
+  .img-enllax {
+    height: 250px;
+  }
+}
 
 /* Bootstrap overrides */
 .text-muted {
